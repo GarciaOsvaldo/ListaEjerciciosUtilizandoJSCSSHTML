@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reloj Digital</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <h1>Reloj Digital</h1>
+        <p id="reloj"></p>
+    </div>
+    
+
+    <script>
+        function ActualizarReloj() {
+            const dia = new Date();
+            //horas
+            const horas = dia.getHours().toString().padStart(2, '0');
+            //minutos
+            const minutos = dia.getMinutes().toString().padStart(2,0);
+            //segundos
+            const segundos = dia.getSeconds().toString().padStart(2, '0');
+            //hora actual
+            const horaActual = `${horas}: ${minutos}: ${segundos}`;
+            document.getElementById("reloj").textContent = horaActual;
+            
+        }
+        setInterval(ActualizarReloj, 1000);
+        ActualizarReloj();
+    </script>
+</body>
+</html>
